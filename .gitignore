@@ -6,3 +6,6 @@ run_analysis.out
 UCIHARDataset.zip
 UCIHARDataset/
 gitinfo.txt
+*.pdf
+niceSample.R
+instructions.txt

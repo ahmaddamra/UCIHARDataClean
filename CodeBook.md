@@ -22,26 +22,26 @@ The sensor signals (accelerometer and gyroscope) were pre-processed by applying 
 A tidy dataset that combines the test and training data provided was created. It was modeled to satisfy the Tidy data rules:
 
 1. Each variable forms a column
-	In generating the tidy data set, The decision was made to treat the fields like  tBodyAcc-mean()-X as one variable rather than multiple variables that would need to be divided. It is possible for an action to change a y direction reading in the phone without changing a x or z direction reading.
+In generating the tidy data set, The decision was made to treat the fields like  tBodyAcc-mean()-X as one variable rather than multiple variables that would need to be divided. It is possible for an action to change a y direction reading in the phone without changing a x or z direction reading.
 
-	The discussions in the class forums were very helpful in reaching such a conclusion especially comments made by David Hood one of the community TA's
-	https://class.coursera.org/getdata-008/forum/thread?thread_id=181
-	https://class.coursera.org/getdata-008/forum/thread?thread_id=94
+The discussions in the class forums were very helpful in reaching such a conclusion especially comments made by David Hood one of the community TA's
+https://class.coursera.org/getdata-008/forum/thread?thread_id=181
+https://class.coursera.org/getdata-008/forum/thread?thread_id=94
 
-	As well as David Hood's the FAQ 
-	https://class.coursera.org/getdata-008/forum/thread?thread_id=24
+As well as David Hood's the FAQ 
+https://class.coursera.org/getdata-008/forum/thread?thread_id=24
 
-	The Activity Code was replaced with the Activity Name for more readability. The Subject id was also added to the data set as well. 
+The Activity Code was replaced with the Activity Name for more readability. The Subject id was also added to the data set as well. 
 
-	Only columns that had mean and standard deviation information for  each variable was kept from the readings. This reduced the number of columns down to 68.
+Only columns that had mean and standard deviation information for  each variable was kept from the readings. This reduced the number of columns down to 68.
 
-	The remaining columns were renamed to make them more readable and tidy.
+The remaining columns were renamed to make them more readable and tidy.
 
 2. Each observation forms a row
-	The rows that made both the train and test data were kept. The mean of all variables were calculated grouped by Activity Name, and Subject id.
+The rows that made both the train and test data were kept. The mean of all variables were calculated grouped by Activity Name, and Subject id.
 
 3. Each type of observational unit forms a table
-	One table (data set) was created as it only contains variables that describe the observarion of one activity made by the subject.
+One table (data set) was created as it only contains variables that describe the observarion of one activity made by the subject.
 
 
 ## Attribute Information:

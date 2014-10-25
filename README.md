@@ -58,7 +58,7 @@ The run_analysis.R file acomplishes the tasks above as follows:
   + Assignment Task 5 -  creates a second, independent tidy data set with the average of each variable for each activity and each subject.
 
 ## How to run the code
-To execute the project. 
+To execute the project:
 1. Download the script run_analysis.R.
 2. Place in a folder on your drive. e.g ~/proj
 3. from the command line (if on Linux) run the following command (the output will be stored in run_analysis.out file and a data file tidyds.txt was created)
