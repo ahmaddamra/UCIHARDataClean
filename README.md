@@ -1,10 +1,3 @@
----
-title: "README"
-author: "Ahmad Damra"
-date: "10/22/2014"
-output: html_document
----
-
 ## Introduction
 This project is the course project for the Getting and Cleaning Data class that is part of the Johns Hopkins University Data Science Specialization offered through coursera.org
 
@@ -14,7 +7,8 @@ The data for the project is downloaded from
 (https://d396qusza40orc.cloudfront.net/getdata%2Fprojectfiles%2FUCI%20HAR%20Dataset.zip)
 
 ## Requirements
-The assignment requires the creation of one R script called run_analysis.R that: 
+The assignment requires the creation of one R script called run_analysis.R that:
+
 1. Merges the training and the test sets to create one data set.
 2. Extracts only the measurements on the mean and standard deviation for each measurement. 
 3. Uses descriptive activity names to name the activities in the data set
@@ -59,7 +53,10 @@ The run_analysis.R file acomplishes the tasks above as follows:
 
 ## How to run the code
 To execute the project:
+
 1. Download the script run_analysis.R.
 2. Place in a folder on your drive. e.g ~/proj
 3. from the command line (if on Linux) run the following command (the output will be stored in run_analysis.out file and a data file tidyds.txt was created)
+```bash
   R CMD BATCH -q run_analysis.R run_analysis.out
+```

@@ -1,10 +1,3 @@
----
-title: "CodeBook.md"
-author: "Ahmad Damra"
-date: "10/22/2014"
-output: html_document
----
-
 This CodeBook describes the data sources in the project, the transformations, and the data in the final data set.
 The project data comes from the Human Activity Recognition Using Smartphones Data Set. It is an open source data set that was built from the recordings of 30 subjects performing activities of daily living (ADL) while carrying a waist-mounted smartphone with embedded inertial sensors.
 
@@ -22,34 +15,36 @@ The sensor signals (accelerometer and gyroscope) were pre-processed by applying 
 A tidy dataset that combines the test and training data provided was created. It was modeled to satisfy the Tidy data rules:
 
 1. Each variable forms a column
-In generating the tidy data set, The decision was made to treat the fields like  tBodyAcc-mean()-X as one variable rather than multiple variables that would need to be divided. It is possible for an action to change a y direction reading in the phone without changing a x or z direction reading.
 
-The discussions in the class forums were very helpful in reaching such a conclusion especially comments made by David Hood one of the community TA's
-https://class.coursera.org/getdata-008/forum/thread?thread_id=181
-https://class.coursera.org/getdata-008/forum/thread?thread_id=94
+	In generating the tidy data set, The decision was made to treat the fields like  tBodyAcc-mean()-X as one variable rather than multiple variables that would need to be divided. It is possible for an action to change a y direction reading in the phone without changing a x or z direction reading.
 
-As well as David Hood's the FAQ 
-https://class.coursera.org/getdata-008/forum/thread?thread_id=24
+	The discussions in the class forums were very helpful in reaching such a conclusion especially comments made by David Hood one of the community TA's
 
-The Activity Code was replaced with the Activity Name for more readability. The Subject id was also added to the data set as well. 
+	https://class.coursera.org/getdata-008/forum/thread?thread_id=181
 
-Only columns that had mean and standard deviation information for  each variable was kept from the readings. This reduced the number of columns down to 68.
+	https://class.coursera.org/getdata-008/forum/thread?thread_id=94
 
+	As well as his FAQ https://class.coursera.org/getdata-008/forum/thread?thread_id=24
+
+	The Activity Code was replaced with the Activity Name for more readability. The Subject id was also added to the data set as well. 
+
+	Only columns that had mean and standard deviation information for  each variable was kept from the readings. This reduced the number of columns down to 68.
 The remaining columns were renamed to make them more readable and tidy.
-
 2. Each observation forms a row
-The rows that made both the train and test data were kept. The mean of all variables were calculated grouped by Activity Name, and Subject id.
 
+	The rows that made both the train and test data were kept. The mean of all variables were calculated grouped by Activity Name, and Subject id.
 3. Each type of observational unit forms a table
-One table (data set) was created as it only contains variables that describe the observarion of one activity made by the subject.
+
+	One table (data set) was created as it only contains variables that describe the observarion of one activity made by the subject.
 
 
 ## Attribute Information:
 For each record in the dataset the following variables are provided: 
+
 * "Volunteer" - An identifier of the subject who carried out the experiment.
 * "ActivityName" -  Its activity label. 
 * The remaining columns provide the mean readings made for each Volunteer and Activity. 
-	a. Naming convention
+	* Naming convention
 		The columns are names are built from six components as follows:
 		1. "Meanof" for the mean of the readings grouped by Volunteer and Activity
 		2. Either:
@@ -68,73 +63,73 @@ For each record in the dataset the following variables are provided:
 			* "XAxis"
 			* "YAxis"
 			* "ZAxis"
-	b. The complete list of the remaining column names is:
-		"MeanOfTimeBodyAcceleratorMeanXAxis" 
-		"MeanOfTimeBodyAcceleratorMeanYAxis" 
-		"MeanOfTimeBodyAcceleratorMeanZAxis" 
-		"MeanOfTimeBodyAcceleratorStdDevXAxis" 
-		"MeanOfTimeBodyAcceleratorStdDevYAxis" 
-		"MeanOfTimeBodyAcceleratorStdDevZAxis" 
-		"MeanOfTimeGravityAcceleratorMeanXAxis" 
-		"MeanOfTimeGravityAcceleratorMeanYAxis" 
-		"MeanOfTimeGravityAcceleratorMeanZAxis" 
-		"MeanOfTimeGravityAcceleratorStdDevXAxis" 
-		"MeanOfTimeGravityAcceleratorStdDevYAxis" 
-		"MeanOfTimeGravityAcceleratorStdDevZAxis" 
-		"MeanOfTimeBodyAcceleratorJerkSignalMeanXAxis" 
-		"MeanOfTimeBodyAcceleratorJerkSignalMeanYAxis" 
-		"MeanOfTimeBodyAcceleratorJerkSignalMeanZAxis" 
-		"MeanOfTimeBodyAcceleratorJerkSignalStdDevXAxis" 
-		"MeanOfTimeBodyAcceleratorJerkSignalStdDevYAxis" 
-		"MeanOfTimeBodyAcceleratorJerkSignalStdDevZAxis" 
-		"MeanOfTimeBodyGyroscopeMeanXAxis" 
-		"MeanOfTimeBodyGyroscopeMeanYAxis" 
-		"MeanOfTimeBodyGyroscopeMeanZAxis" 
-		"MeanOfTimeBodyGyroscopeStdDevXAxis" 
-		"MeanOfTimeBodyGyroscopeStdDevYAxis" 
-		"MeanOfTimeBodyGyroscopeStdDevZAxis" 
-		"MeanOfTimeBodyGyroscopeJerkSignalMeanXAxis" 
-		"MeanOfTimeBodyGyroscopeJerkSignalMeanYAxis" 
-		"MeanOfTimeBodyGyroscopeJerkSignalMeanZAxis" 
-		"MeanOfTimeBodyGyroscopeJerkSignalStdDevXAxis" 
-		"MeanOfTimeBodyGyroscopeJerkSignalStdDevYAxis" 
-		"MeanOfTimeBodyGyroscopeJerkSignalStdDevZAxis" 
-		"MeanOfTimeBodyAcceleratorMagnitudeMean" 
-		"MeanOfTimeBodyAcceleratorMagnitudeStdDev" 
-		"MeanOfTimeGravityAcceleratorMagnitudeMean" 
-		"MeanOfTimeGravityAcceleratorMagnitudeStdDev" 
-		"MeanOfTimeBodyAcceleratorJerkSignalMagnitudeMean" 
-		"MeanOfTimeBodyAcceleratorJerkSignalMagnitudeStdDev" 
-		"MeanOfTimeBodyGyroscopeMagnitudeMean" 
-		"MeanOfTimeBodyGyroscopeMagnitudeStdDev" 
-		"MeanOfTimeBodyGyroscopeJerkSignalMagnitudeMean" 
-		"MeanOfTimeBodyGyroscopeJerkSignalMagnitudeStdDev" 
-		"MeanOfFourierBodyAcceleratorMeanXAxis" 
-		"MeanOfFourierBodyAcceleratorMeanYAxis" 
-		"MeanOfFourierBodyAcceleratorMeanZAxis" 
-		"MeanOfFourierBodyAcceleratorStdDevXAxis" 
-		"MeanOfFourierBodyAcceleratorStdDevYAxis" 
-		"MeanOfFourierBodyAcceleratorStdDevZAxis" 
-		"MeanOfFourierBodyAcceleratorJerkSignalMeanXAxis" 
-		"MeanOfFourierBodyAcceleratorJerkSignalMeanYAxis" 
-		"MeanOfFourierBodyAcceleratorJerkSignalMeanZAxis" 
-		"MeanOfFourierBodyAcceleratorJerkSignalStdDevXAxis" 
-		"MeanOfFourierBodyAcceleratorJerkSignalStdDevYAxis" 
-		"MeanOfFourierBodyAcceleratorJerkSignalStdDevZAxis" 
-		"MeanOfFourierBodyGyroscopeMeanXAxis" 
-		"MeanOfFourierBodyGyroscopeMeanYAxis" 
-		"MeanOfFourierBodyGyroscopeMeanZAxis" 
-		"MeanOfFourierBodyGyroscopeStdDevXAxis" 
-		"MeanOfFourierBodyGyroscopeStdDevYAxis" 
-		"MeanOfFourierBodyGyroscopeStdDevZAxis" 
-		"MeanOfFourierBodyAcceleratorMagnitudeMean" 
-		"MeanOfFourierBodyAcceleratorMagnitudeStdDev" 
-		"MeanOfFourierBodyBodyAcceleratorJerkSignalMagnitudeMean" 
-		"MeanOfFourierBodyBodyAcceleratorJerkSignalMagnitudeStdDev" 
-		"MeanOfFourierBodyBodyGyroscopeMagnitudeMean" 
-		"MeanOfFourierBodyBodyGyroscopeMagnitudeStdDev" 
-		"MeanOfFourierBodyBodyGyroscopeJerkSignalMagnitudeMean" 
-		"MeanOfFourierBodyBodyGyroscopeJerkSignalMagnitudeStdDev"
+	* The complete list of the remaining column names is:
+		* "MeanOfTimeBodyAcceleratorMeanXAxis" 
+		* "MeanOfTimeBodyAcceleratorMeanYAxis" 
+		* "MeanOfTimeBodyAcceleratorMeanZAxis" 
+		* "MeanOfTimeBodyAcceleratorStdDevXAxis" 
+		* "MeanOfTimeBodyAcceleratorStdDevYAxis" 
+		* "MeanOfTimeBodyAcceleratorStdDevZAxis" 
+		* "MeanOfTimeGravityAcceleratorMeanXAxis" 
+		* "MeanOfTimeGravityAcceleratorMeanYAxis" 
+		* "MeanOfTimeGravityAcceleratorMeanZAxis" 
+		* "MeanOfTimeGravityAcceleratorStdDevXAxis" 
+		* "MeanOfTimeGravityAcceleratorStdDevYAxis" 
+		* "MeanOfTimeGravityAcceleratorStdDevZAxis" 
+		* "MeanOfTimeBodyAcceleratorJerkSignalMeanXAxis" 
+		* "MeanOfTimeBodyAcceleratorJerkSignalMeanYAxis" 
+		* "MeanOfTimeBodyAcceleratorJerkSignalMeanZAxis" 
+		* "MeanOfTimeBodyAcceleratorJerkSignalStdDevXAxis" 
+		* "MeanOfTimeBodyAcceleratorJerkSignalStdDevYAxis" 
+		* "MeanOfTimeBodyAcceleratorJerkSignalStdDevZAxis" 
+		* "MeanOfTimeBodyGyroscopeMeanXAxis" 
+		* "MeanOfTimeBodyGyroscopeMeanYAxis" 
+		* "MeanOfTimeBodyGyroscopeMeanZAxis" 
+		* "MeanOfTimeBodyGyroscopeStdDevXAxis" 
+		* "MeanOfTimeBodyGyroscopeStdDevYAxis" 
+		* "MeanOfTimeBodyGyroscopeStdDevZAxis" 
+		* "MeanOfTimeBodyGyroscopeJerkSignalMeanXAxis" 
+		* "MeanOfTimeBodyGyroscopeJerkSignalMeanYAxis" 
+		* "MeanOfTimeBodyGyroscopeJerkSignalMeanZAxis" 
+		* "MeanOfTimeBodyGyroscopeJerkSignalStdDevXAxis" 
+		* "MeanOfTimeBodyGyroscopeJerkSignalStdDevYAxis" 
+		* "MeanOfTimeBodyGyroscopeJerkSignalStdDevZAxis" 
+		* "MeanOfTimeBodyAcceleratorMagnitudeMean" 
+		* "MeanOfTimeBodyAcceleratorMagnitudeStdDev" 
+		* "MeanOfTimeGravityAcceleratorMagnitudeMean" 
+		* "MeanOfTimeGravityAcceleratorMagnitudeStdDev" 
+		* "MeanOfTimeBodyAcceleratorJerkSignalMagnitudeMean" 
+		* "MeanOfTimeBodyAcceleratorJerkSignalMagnitudeStdDev" 
+		* "MeanOfTimeBodyGyroscopeMagnitudeMean" 
+		* "MeanOfTimeBodyGyroscopeMagnitudeStdDev" 
+		* "MeanOfTimeBodyGyroscopeJerkSignalMagnitudeMean" 
+		* "MeanOfTimeBodyGyroscopeJerkSignalMagnitudeStdDev" 
+		* "MeanOfFourierBodyAcceleratorMeanXAxis" 
+		* "MeanOfFourierBodyAcceleratorMeanYAxis" 
+		* "MeanOfFourierBodyAcceleratorMeanZAxis" 
+		* "MeanOfFourierBodyAcceleratorStdDevXAxis" 
+		* "MeanOfFourierBodyAcceleratorStdDevYAxis" 
+		* "MeanOfFourierBodyAcceleratorStdDevZAxis" 
+		* "MeanOfFourierBodyAcceleratorJerkSignalMeanXAxis" 
+		* "MeanOfFourierBodyAcceleratorJerkSignalMeanYAxis" 
+		* "MeanOfFourierBodyAcceleratorJerkSignalMeanZAxis" 
+		* "MeanOfFourierBodyAcceleratorJerkSignalStdDevXAxis" 
+		* "MeanOfFourierBodyAcceleratorJerkSignalStdDevYAxis" 
+		* "MeanOfFourierBodyAcceleratorJerkSignalStdDevZAxis" 
+		* "MeanOfFourierBodyGyroscopeMeanXAxis" 
+		* "MeanOfFourierBodyGyroscopeMeanYAxis" 
+		* "MeanOfFourierBodyGyroscopeMeanZAxis" 
+		* "MeanOfFourierBodyGyroscopeStdDevXAxis" 
+		* "MeanOfFourierBodyGyroscopeStdDevYAxis" 
+		* "MeanOfFourierBodyGyroscopeStdDevZAxis" 
+		* "MeanOfFourierBodyAcceleratorMagnitudeMean" 
+		* "MeanOfFourierBodyAcceleratorMagnitudeStdDev" 
+		* "MeanOfFourierBodyBodyAcceleratorJerkSignalMagnitudeMean" 
+		* "MeanOfFourierBodyBodyAcceleratorJerkSignalMagnitudeStdDev" 
+		* "MeanOfFourierBodyBodyGyroscopeMagnitudeMean" 
+		* "MeanOfFourierBodyBodyGyroscopeMagnitudeStdDev" 
+		* "MeanOfFourierBodyBodyGyroscopeJerkSignalMagnitudeMean" 
+		* "MeanOfFourierBodyBodyGyroscopeJerkSignalMagnitudeStdDev"
 
 
 
