@@ -132,5 +132,5 @@ rm("keeptbldf", "readingsnames", "colnames")
 
 ##
 ## write tinydata set to file as per assignment
-write.table(tidyds, file = "./tidyds.txt", row.name=FALSE)
+write.table(tidyds, file = "./tidyds.txt", row.names=FALSE)
 
